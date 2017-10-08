@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/popup"
+     >
+<TextView android:id="@+id/header"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"
+    android:text="@string/app_name"
+    android:gravity="center"
+    android:textColor="@android:color/white"
+    android:background="@android:color/black"
+    android:textSize="20sp"
+    />
+<TextView android:id="@+id/text"
+    android:layout_width="fill_parent" android:layout_height="40dp"
+    android:gravity="center_vertical|center_horizontal"
+    android:layout_below="@+id/header"
+    android:textColor="@android:color/white"
+    android:background="@android:color/black"
+    android:windowBackground="@android:color/white" 
+    android:windowIsTranslucent="true" 
+    android:windowAnimationStyle="@android:style/Animation.Translucent"></TextView>
+<TextView 
+    android:layout_below="@+id/text"
+    style="?android:attr/buttonStyleSmall"
+    android:textColor="@android:color/white"
+    android:background="@android:color/white"
+   	android:layout_width="fill_parent" android:layout_height="2dp"
+   	 ></TextView>
+
+<ImageButton
+    android:id="@+id/dismissImage"
+    android:layout_width="50dp"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/text"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"
+    android:background="@android:color/transparent"
+    android:src="@drawable/close" />
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="2dp"
+    android:layout_above="@+id/text"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:background="@android:color/white"
+     />
+
+<ImageView
+    android:id="@+id/imageView1"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:src="@drawable/finger" />
+
+</RelativeLayout>

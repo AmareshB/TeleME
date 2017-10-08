@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:swipe="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+        android:id="@+id/container"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/buttonrefresh"
+                    style="@style/ButtonBlueLarge"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_alignTop="@+id/buttonConfirm"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/rightsms"
+                    android:layout_toRightOf="@+id/buttonConfirm"
+                    android:text="@string/refresh" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                     />
+
+                <TextView
+                    android:id="@+id/rightsms"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                     />
+
+                <TextView
+                    android:id="@+id/editTextNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignRight="@+id/buttonDatePickup"
+                    android:layout_marginTop="24dp"
+                    android:layout_toRightOf="@+id/textView1"
+                    android:background="@drawable/borders"
+                    android:clickable="true"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/contacts"
+                    android:onClick="onClick"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/buttonDatePickup"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_alignLeft="@+id/buttonConfirm"
+                    android:layout_below="@+id/editTextNumber"
+                    android:layout_marginTop="16dp"
+                    android:layout_toLeftOf="@+id/rightsms"
+                    android:background="@drawable/borders"
+                    android:clickable="true"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/date"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/buttonTimePickup"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_alignLeft="@+id/editTextNumber"
+                    android:layout_below="@+id/buttonDatePickup"
+                    android:layout_marginTop="20dp"
+                    android:layout_toLeftOf="@+id/rightsms"
+                    android:background="@drawable/borders"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/time"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/editTextMessage1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="120dp"
+                    android:layout_alignLeft="@+id/buttonTimePickup"
+                    android:layout_below="@+id/buttonTimePickup"
+                    android:layout_marginTop="19dp"
+                    android:layout_toLeftOf="@+id/rightsms"
+                    android:background="@drawable/borders"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/entermsg"
+                    android:inputType="textMultiLine"
+                    android:singleLine="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/buttonConfirm"
+                    style="@style/ButtonBlueLarge"
+                    android:layout_width="155dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/editTextMessage1"
+                    android:layout_marginTop="14dp"
+                    android:layout_toRightOf="@+id/textView1"
+                    android:text="@string/add" />
+                
+        	<SlidingDrawer
+	        android:id="@+id/SlidingDrawersms"
+	        android:layout_width="match_parent"
+	        android:layout_height="fill_parent"
+	        android:content="@+id/contentLayoutsms"
+	        android:handle="@+id/slideButtonsms"
+	        android:orientation="vertical"
+	         >
+	 
+	        <Button
+	            android:id="@+id/slideButtonsms"
+	            android:layout_width="match_parent"
+	            android:layout_height="30dp"
+	            android:gravity="center"
+	            android:background="@drawable/deletebutton"
+	            android:textColor="@color/red"
+	            android:text="@string/del" >
+	        </Button>
+	 
+	     <RelativeLayout
+	            android:id="@+id/contentLayoutsms"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:background="@color/slideup"
+	            >
+	            
+		<com.fortysevendeg.swipelistview.SwipeListView
+            android:id="@+id/swipelistviewsms"
+            android:listSelector="#00000000"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            swipe:swipeFrontView="@+id/frontsms"
+            swipe:swipeBackView="@+id/backsms"
+            swipe:swipeDrawableChecked="@drawable/choice_selected"
+            swipe:swipeDrawableUnchecked="@drawable/choice_unselected"
+            swipe:swipeCloseAllItemsWhenMoveList="true"
+            swipe:swipeMode="both"
+            />  
+		<TextView
+		    android:id="@+id/nosms"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content" 
+		    android:visibility="gone"
+		    android:textSize="20sp"
+		    android:layout_centerVertical="true"
+			android:layout_centerHorizontal="true"
+		    android:text="@string/nosms"
+		    />
+	 
+	            
+	        </RelativeLayout>
+	    </SlidingDrawer>
+	    
+</RelativeLayout>
+			
+		

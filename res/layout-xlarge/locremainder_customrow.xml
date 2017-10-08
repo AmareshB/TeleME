@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@android:color/white">
+ 
+        <RelativeLayout
+            android:id="@+id/backviewloc"
+            style="@style/MyListFrontContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="3dp"
+            android:tag="back" >
+		<Button
+		    android:id="@+id/deleteloc"
+		    android:layout_width="wrap_content"
+		    android:layout_height="70sp"
+		    style="@style/ButtonRed"
+		    android:text="@string/deletesms"
+		    android:gravity="center"
+		    android:textColor="@android:color/black"
+		    
+		    />        
+		    </RelativeLayout>
+
+     <RelativeLayout
+         android:id="@+id/frontviewloc"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:tag="front" 
+         style="@style/MyListFrontContent">
+ 
+        <ImageView
+            android:contentDescription="@string/empty"
+                style="@style/MyListImage"
+                android:id="@+id/example_image"/>
+ 
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/MyListTitle"
+                android:textSize="35sp"
+                android:textColor="@android:color/black"
+                android:gravity="center|left"
+                android:id="@+id/placeName"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/remaindermessloc"
+                android:textSize="25sp"
+                android:textColor="@android:color/black"
+                android:layout_below="@+id/placeName"
+                android:maxLines="2"
+                android:gravity="left"
+                android:layout_gravity="center"/>
+ 		
+    </RelativeLayout>
+ 
+</FrameLayout>

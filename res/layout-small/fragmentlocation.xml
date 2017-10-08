@@ -1,0 +1,101 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical" >
+    <EditText
+        android:id="@+id/searchlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"
+        android:background="@drawable/borders"
+        android:layout_toLeftOf="@+id/search"
+        android:hint="@string/search" 
+        />
+
+    <Button
+        android:id="@+id/search"
+        style="@style/ButtonBlueLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/search" />
+
+   <fragment
+        android:layout_below="@+id/searchlocation"
+        android:tag="@string/map"
+        class="com.google.android.gms.maps.MapFragment"
+        android:name="com.remainders.alarma.FragmentLocation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+      <!--   
+    <com.google.android.gms.maps.MapView 
+        android:id="@+id/mapview"
+        android:layout_below="@+id/search"
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent" />
+      -->
+    <SlidingDrawer
+	        android:id="@+id/SlidingDrawerloc"
+	        android:layout_width="match_parent"
+	        android:layout_height="fill_parent"
+	        android:content="@+id/contentLayoutloc"
+	        android:handle="@+id/slideButtonloc"
+	        android:orientation="vertical"
+	         >
+	 
+	        <Button
+	            android:id="@+id/slideButtonloc"
+	            android:layout_width="match_parent"
+	            android:layout_height="30dp"
+				android:gravity="center"
+	            android:background="@drawable/deletebutton"
+	            android:textColor="@color/red"
+	            android:text="@string/del" >
+	        </Button>
+	 
+	    <RelativeLayout
+	            android:id="@+id/contentLayoutloc"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:background="@color/slideup"
+	             >
+		<com.fortysevendeg.swipelistview.SwipeListView
+            android:id="@+id/locationswipelist"
+            android:listSelector="#00000000"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            swipe:swipeFrontView="@+id/frontviewloc"
+            swipe:swipeBackView="@+id/backviewloc"
+            swipe:swipeDrawableChecked="@drawable/choice_selected"
+            swipe:swipeDrawableUnchecked="@drawable/choice_unselected"
+            swipe:swipeCloseAllItemsWhenMoveList="true"
+            swipe:swipeMode="both"
+            />
+
+		<TextView
+		    android:id="@+id/noloc"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content" 
+		    android:visibility="gone"
+		    android:textSize="20sp"
+		    android:layout_centerVertical="true"
+			android:layout_centerHorizontal="true"
+		    android:text="@string/nocall"
+		    />
+	 
+	        </RelativeLayout>
+	    </SlidingDrawer>
+    
+
+</RelativeLayout>

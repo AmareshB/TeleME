@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@android:color/white">
+ 
+        <RelativeLayout
+            android:id="@+id/backcall"
+            style="@style/MyListFrontContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="back" >
+
+        <Button
+            android:id="@+id/deleteswipe"
+            android:layout_width="wrap_content"
+            android:layout_height="60sp"
+            android:textSize="25sp"
+            android:text="@string/del"
+            style="@style/ButtonRed"
+            />
+        
+    </RelativeLayout>
+
+     <RelativeLayout
+         android:id="@+id/frontcall"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:tag="front" 
+         style="@style/MyListFrontContent">
+ 
+        <ImageView
+                style="@style/MyListImage"
+                android:id="@+id/example_image"
+                android:contentDescription="@string/app_name"/>
+ 
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/MyListTitle"
+                android:textSize="25sp"
+                android:textColor="@android:color/black"
+                android:gravity="center|left"
+                android:id="@+id/example_itemname"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/remaindermess"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:layout_below="@+id/example_itemname"
+                android:maxLines="2"
+                android:gravity="left"
+                android:layout_gravity="center"/>
+        
+        <ImageButton android:id="@+id/callphone"
+            android:layout_width="60dp"
+		    android:layout_height="60dp"
+		    android:layout_alignParentRight="true"
+		    android:contentDescription="@string/call"
+		    android:layout_centerVertical="true"
+		    android:background="@drawable/phonecall"
+		    android:drawablePadding="15dp"
+		    android:scaleType="center"
+            />
+ 		
+    </RelativeLayout>
+ 
+</FrameLayout>
